@@ -1,0 +1,38 @@
+instruction: |
+  Work in a fresh Ubuntu container at /app.
+  Parse a simple web access log and compute the top 3 IP addresses by request count.
+
+  Do the following exactly:
+  1) Create a file /app/web.log with exactly these 12 lines (keep spacing exactly as shown):
+     192.168.0.10 - - [01/Jan/2025:00:00:01 +0000] "GET /index.html HTTP/1.1" 200 123
+     10.0.0.5 - - [01/Jan/2025:00:00:02 +0000] "GET /about HTTP/1.1" 200 231
+     192.168.0.10 - - [01/Jan/2025:00:00:03 +0000] "POST /api/v1/login HTTP/1.1" 200 77
+     172.16.0.2 - - [01/Jan/2025:00:00:04 +0000] "GET /contact HTTP/1.1" 404 12
+     10.0.0.5 - - [01/Jan/2025:00:00:05 +0000] "GET /home HTTP/1.1" 200 198
+     203.0.113.9 - - [01/Jan/2025:00:00:06 +0000] "GET /index.html HTTP/1.1" 200 123
+     192.168.0.10 - - [01/Jan/2025:00:00:07 +0000] "GET /docs HTTP/1.1" 200 321
+     10.0.0.5 - - [01/Jan/2025:00:00:08 +0000] "POST /api/v1/order HTTP/1.1" 201 65
+     198.51.100.7 - - [01/Jan/2025:00:00:09 +0000] "GET /index.html HTTP/1.1" 200 123
+     192.0.2.4 - - [01/Jan/2025:00:00:10 +0000] "GET /help HTTP/1.1" 200 54
+     10.0.0.5 - - [01/Jan/2025:00:00:11 +0000] "GET /pricing HTTP/1.1" 200 87
+     192.168.0.10 - - [01/Jan/2025:00:00:12 +0000] "GET /blog HTTP/1.1" 200 90
+
+  2) Produce /app/top_ips.txt with the TOP 3 IPs and their counts, one per line,
+     in the format: "IP count". Sort primarily by count (descending) and break ties
+     by IP (ascending). Use standard Unix tools (awk/sort/uniq/head). Examples of the
+     expected format:
+       1.2.3.4 10
+       5.6.7.8 8
+       9.9.9.9 6
+
+  3) Keep file names and paths exactly as specified.
+
+  Hints:
+  - The client container working directory is /app.
+  - The log format is simple; the IP is the first space-delimited field on each line.
+
+author_email: your@email.com
+difficulty: easy
+tags: [bash, text-processing, awk, sort]
+max_agent_timeout_sec: 180
+max_test_timeout_sec: 30
