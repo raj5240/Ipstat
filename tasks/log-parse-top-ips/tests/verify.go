@@ -48,6 +48,7 @@ func main() {
         fmt.Println("Missing /app/web.log:", err)
         os.Exit(1)
     }
+    
     if _, err := os.Stat("/app/top_ips.txt"); err != nil {
         fmt.Println("Missing /app/top_ips.txt:", err)
         os.Exit(1)
