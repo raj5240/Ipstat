@@ -1,3 +1,4 @@
+
 log-parse-top-ips
 
 A small Terminal-Bench task that parses a web access log and computes the top 3 IPs by request count. The reference solution and verifier are implemented in Go.
