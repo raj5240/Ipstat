@@ -18,6 +18,7 @@ cat > web.log <<'LOG'
 LOG
 
 cat > main.go <<'GO'
+
 package main
 
 import (
