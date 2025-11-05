@@ -31,8 +31,8 @@ instruction: |
   - The client container working directory is /app.
   - The log format is simple; the IP is the first space-delimited field on each line.
 
-author_email: your@email.com
-difficulty: easy
-tags: [bash, text-processing, awk, sort]
-max_agent_timeout_sec: 180
-max_test_timeout_sec: 30
+author_email : your@email.com
+difficulty : easy
+tags : [bash, text-processing, awk, sort]
+max_agent_timeout_sec : 180
+max_test_timeout_sec : 30
